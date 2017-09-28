@@ -29,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0 ; i<100 ; i++){
             data.add("Temp Data="+i);
         }
-        // 나.아답터 생성 - viewPager는 생성과 함께 데이터를 넘긴다.
+        // 나.아답터 생성
         CustomAdapter adapter = new CustomAdapter(this, data);
         // 다.아답터 연결
         viewPager.setAdapter(adapter);
+        // ** 생성후에 데이터를 세팅할 경우
+        // adapter.notifyDataSetChanged(); 를 꼭 호출해야 한다.
     }
 }
 
